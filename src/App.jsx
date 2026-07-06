@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard'
 import { loadState, saveState } from './utils/storage'
 import { exportEpicsCSV, exportFullStateCSV } from './utils/exportCsv'
 import { importFromFile } from './utils/importCsv'
+import { exportPdf } from './utils/exportPdf'
 
 const defaultState = {
   people: [],
@@ -143,6 +144,7 @@ export default function App(){
         <button className="tbtn primary" onClick={() => exportEpicsCSV(state)}>Export CSV</button>
         <button className="tbtn" onClick={() => exportFullStateCSV(state)}>Export Full</button>
         <button className="tbtn" onClick={handleImport}>Import CSV</button>
+        <button className="tbtn" onClick={() => exportPdf(state)}>Export PDF</button>
         <button className="tbtn danger" onClick={() => { if(confirm('Reset all data?')) setState(structuredClone(defaultState)) }}>Reset</button>
         <span style={{flex:1}}></span>
         <span style={{fontSize:'11px',color:'var(--text-muted)'}}>localStorage · {state.people.length} people · {state.sprints.length} sprints · {state.epics.length} epics</span>
