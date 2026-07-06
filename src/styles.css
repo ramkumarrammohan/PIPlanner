@@ -1,0 +1,262 @@
+/* ── Theme: Dark (default) ── */
+:root{
+  --bg-body:#0B1B2B;
+  --bg-panel:#0d2137;
+  --bg-surface:#0B1B2B;
+  --bg-input:#1e3a52;
+  --bg-hover:#1e3a52;
+  --bg-warn:#1e2e1e;
+  --bg-danger:#2d1a16;
+  --bg-over: #2d1a16;
+  --text-primary:#e8eaf0;
+  --text-secondary:#a8c8e8;
+  --text-muted:#4a8ab5;
+  --text-empty:#2a4f6e;
+  --border:#1e3a52;
+  --border-light:#2a4f6e;
+  --accent:#1F77B4;
+  --accent-hover:#2980c3;
+  --danger:#E76F51;
+  --success:#6FCF97;
+  --warning:#F2C94C;
+  --scrollbar-track:#0d2137;
+  --scrollbar-thumb:#2a4f6e;
+  --scrollbar-thumb-hover:#3a5f7e;
+  --shadow:rgba(0,0,0,.5);
+  --header-bg:#0d2137;
+  --header-border:#1e3a52;
+  --header-h1:#1F77B4;
+  --tooltip-bg:#0d2137;
+  --kpi-capacity:#1F77B4;
+  --kpi-used:#6FCF97;
+  --kpi-remaining:#F2C94C;
+  --kpi-overloaded:#E76F51;
+  --kpi-people:#BB86FC;
+  --palette-0:#1F77B4;
+  --palette-1:#6FCF97;
+  --palette-2:#F2C94C;
+  --palette-3:#BB86FC;
+  --palette-4:#E76F51;
+  --palette-5:#2196F3;
+  --palette-6:#FF7043;
+  --palette-7:#00B894;
+}
+
+/* ── Theme: Light ── */
+.theme-light{
+  --bg-body:#FFF7ED;
+  --bg-panel:#ffffff;
+  --bg-surface:#ffffff;
+  --bg-input:#ffffff;
+  --bg-hover:#FFF3E0;
+  --bg-warn:#FFFFF0;
+  --bg-danger:#FDECEA;
+  --bg-over: #FDECEA;
+  --text-primary:#2d2d2d;
+  --text-secondary:#666666;
+  --text-muted:#888888;
+  --text-empty:#cccccc;
+  --border:#ffe0c0;
+  --border-light:#f5f5f5;
+  --accent:#FF7043;
+  --accent-hover:#ff8555;
+  --danger:#EB5757;
+  --success:#00B894;
+  --warning:#F2C94C;
+  --scrollbar-track:#FFF7ED;
+  --scrollbar-thumb:#FFD4B8;
+  --scrollbar-thumb-hover:#FFB88E;
+  --shadow:rgba(0,0,0,.08);
+  --header-bg:linear-gradient(135deg,#FF7043,#FF9A3C);
+  --header-border:transparent;
+  --header-h1:#ffffff;
+  --tooltip-bg:#ffffff;
+  --kpi-capacity:#FF7043;
+  --kpi-used:#00B894;
+  --kpi-remaining:#F2C94C;
+  --kpi-overloaded:#EB5757;
+  --kpi-people:#7B61FF;
+  --palette-0:#1976D2;
+  --palette-1:#2E7D32;
+  --palette-2:#F9A825;
+  --palette-3:#7B1FA2;
+  --palette-4:#C62828;
+  --palette-5:#1565C0;
+  --palette-6:#E65100;
+  --palette-7:#00695C;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',monospace,sans-serif}
+body{background:var(--bg-body);color:var(--text-primary);min-height:100vh}
+.app{min-height:100vh;background:var(--bg-body)}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--scrollbar-track)}
+::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--scrollbar-thumb-hover)}
+
+/* ── Header ── */
+.header{background:var(--header-bg);border-bottom:1px solid var(--header-border);padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
+.header h1{font-size:17px;font-weight:700;color:var(--header-h1);letter-spacing:1px;margin:0}
+.nav{display:flex;align-items:center;gap:6px}
+.nav button{background:var(--bg-input);border:1px solid var(--border-light);color:var(--text-secondary);padding:5px 16px;border-radius:4px;font-size:12px;cursor:pointer;white-space:nowrap}
+.nav button:hover{background:var(--bg-hover)}
+.nav button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ── KPI Cards ── */
+.kpis{display:flex;gap:10px;padding:12px 20px;border-bottom:1px solid var(--border)}
+.kpi{background:var(--bg-panel);border:1px solid var(--border);border-radius:8px;padding:10px 16px;flex:1;min-width:0}
+.kpi .label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:4px}
+.kpi .val{font-size:26px;font-weight:800;font-family:monospace}
+.kpi .trend{font-size:10px;color:var(--text-muted);margin-top:2px}
+.kpi .val.capacity{color:var(--kpi-capacity)}
+.kpi .val.used{color:var(--kpi-used)}
+.kpi .val.remaining{color:var(--kpi-remaining)}
+.kpi .val.overloaded{color:var(--kpi-overloaded)}
+.kpi .val.people{color:var(--kpi-people)}
+
+/* ── Main Layout ── */
+.layout{display:flex;height:calc(100vh - 200px);overflow:hidden}
+
+/* ── Left Panel ── */
+.left-nav{width:200px;background:var(--bg-panel);border-right:1px solid var(--border);padding:12px;overflow-y:auto;flex-shrink:0}
+.section-hd{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:8px;margin-top:12px}
+.section-hd:first-child{margin-top:0}
+.person-item{padding:7px 8px;border-radius:6px;margin-bottom:4px}
+.person-item:hover{background:var(--bg-hover)}
+.pn{font-size:13px;font-weight:600;margin-bottom:3px}
+.pbar{height:4px;border-radius:2px;background:var(--border);margin-bottom:2px}
+.pbar-fill{height:100%;border-radius:2px}
+.pstat{font-size:10px;color:var(--text-muted)}
+.pstat.warn{color:var(--danger)}
+
+.left-nav .add-form{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.left-nav .add-form input{width:100%}
+.left-nav .add-form button{width:100%}
+
+/* ── Resize Handle ── */
+.resize-handle{width:4px;cursor:col-resize;background:var(--bg-input);flex-shrink:0;transition:background .15s;position:relative}
+.resize-handle:hover,.resize-handle:active{background:var(--border-light)}
+.resize-handle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:2px;height:24px;background:var(--text-muted);border-radius:2px;opacity:.5}
+
+/* ── Center Panel ── */
+.center{flex:1;overflow:auto;padding:14px}
+
+/* ── Right Panel ── */
+.right-panel{width:220px;background:var(--bg-panel);border-left:1px solid var(--border);padding:12px;overflow-y:auto;flex-shrink:0}
+
+/* ── Epic Allocation Grid (center) ── */
+.epic-list{display:flex;flex-direction:column;gap:12px}
+.epic-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:6px;padding:12px}
+.epic-header{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.epic-header input[type=text]{background:var(--bg-input);border:1px solid var(--border-light);color:var(--text-primary);padding:5px 10px;border-radius:4px;font-size:13px;flex:1;min-width:120px}
+.epic-header .meta{display:flex;gap:8px;align-items:center;margin-left:auto;color:var(--text-muted);font-size:12px}
+.epic-header .meta input[type=number]{width:70px}
+.epic-header .actions button{margin-left:8px}
+
+/* Allocation table inside epic card */
+.alloc-grid{margin-top:10px}
+.alloc-grid table{width:100%;border-collapse:collapse}
+.alloc-grid th{background:var(--bg-panel);color:var(--text-secondary);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:6px;border:1px solid var(--border)}
+.alloc-grid td{padding:6px;border:1px solid var(--border);vertical-align:middle;font-size:13px}
+.alloc-grid .sprint-total{font-weight:700;text-align:center;color:var(--text-primary)}
+.alloc-grid .small{background:transparent;border:0;color:var(--text-muted);cursor:pointer;font-size:12px}
+.alloc-grid .small:hover{color:var(--danger)}
+
+/* Person assignment inputs inside allocation grid */
+.person-list{display:flex;flex-wrap:nowrap;gap:10px;align-items:center;overflow:auto}
+.person-assign{display:flex;flex-direction:column;align-items:center;min-width:60px}
+.person-assign label{font-size:11px;color:var(--text-secondary);margin-bottom:3px}
+.person-assign input[type=number]{width:54px;padding:4px;text-align:center;background:var(--bg-input);border:1px solid var(--border-light);color:var(--text-primary);border-radius:4px;font-size:12px}
+
+/* ── Sprint Summary (right panel) ── */
+.sprint-summary h2{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;font-weight:700}
+.sprint-cards{display:flex;flex-direction:column;gap:6px}
+.sprint-card{padding:8px;border-radius:6px;font-size:12px}
+.sprint-card.ok{background:var(--bg-panel);border:1px solid var(--border);color:var(--success)}
+.sprint-card.warn{background:var(--bg-warn);border:1px solid var(--success);color:var(--warning)}
+.sprint-card.over{background:var(--bg-danger);border:1px solid var(--danger);color:var(--danger)}
+.sprint-card.full{background:var(--bg-warn);border:1px solid var(--success);color:var(--success)}
+.sprint-name{font-weight:700;font-size:13px;margin-bottom:3px}
+.sprint-card .detail{font-size:11px;opacity:.85}
+
+/* ── Custom Tooltip ── */
+.heat[data-tooltip]{position:relative;cursor:help}
+.heat[data-tooltip]::after{content:attr(data-tooltip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--tooltip-bg);border:1px solid var(--border);color:var(--text-primary);padding:8px 12px;border-radius:6px;font-size:12px;font-weight:400;line-height:1.5;white-space:pre-line;pointer-events:none;opacity:0;transition:opacity .15s;z-index:100;min-width:160px;max-width:280px;box-shadow:0 4px 12px var(--shadow)}
+.heat[data-tooltip]::before{content:'';position:absolute;bottom:calc(100% + 5px);left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--border);pointer-events:none;opacity:0;transition:opacity .15s;z-index:100}
+.heat[data-tooltip]:hover::after,.heat[data-tooltip]:hover::before{opacity:1}
+
+/* ── Buttons ── */
+button{cursor:pointer;font-family:inherit}
+.btn{background:var(--bg-input);color:var(--text-secondary);border:1px solid var(--border-light);padding:5px 14px;border-radius:4px;font-size:12px;font-weight:600}
+.btn:hover{background:var(--bg-hover)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn.danger{background:var(--bg-danger);color:var(--danger);border-color:var(--danger)}
+.btn.danger:hover{background:var(--bg-over)}
+.btn.small{background:transparent;border:0;color:var(--text-muted);font-size:11px;padding:2px 4px}
+.btn.small:hover{color:var(--danger)}
+
+/* ── Inputs ── */
+input{background:var(--bg-input);border:1px solid var(--border-light);color:var(--text-primary);padding:5px 10px;border-radius:4px;font-size:12px;outline:none}
+input:focus{border-color:var(--accent)}
+input[type=number]{width:64px;-moz-appearance:textfield}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+select{background:var(--bg-input);border:1px solid var(--border-light);color:var(--text-primary);padding:5px 10px;border-radius:4px;font-size:12px;outline:none}
+select:focus{border-color:var(--accent)}
+
+/* ── Small inline form ── */
+.small-form{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.small-form input{padding:5px 8px}
+
+/* ── Roadmap View (full page) ── */
+.roadmap{width:100%}
+.roadmap h2{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;font-weight:700}
+.roadmap .roadmap-grid{display:flex;flex-direction:column;gap:8px}
+.roadmap-header,.rm-row{display:flex}
+.roadmap .col{padding:6px;border:1px solid var(--border)}
+.roadmap .epic-col{flex:0 0 260px;background:var(--bg-panel)}
+.roadmap .sprint-col{flex:1 1 0;min-width:140px}
+.bar-outer{background:var(--bg-input);height:28px;border-radius:4px;overflow:hidden}
+.bar-inner{height:28px;background:var(--accent);color:#fff;padding:4px 6px;white-space:nowrap;font-size:12px;font-weight:600}
+.bar-persons{font-size:11px;color:var(--text-muted);margin-top:4px}
+.epic-name{font-weight:600;color:var(--text-primary)}
+.roadmap .meta{font-weight:400;color:var(--text-muted);font-size:12px;margin-left:6px}
+
+/* ── Toolbar ── */
+.toolbar{background:var(--bg-panel);border-top:1px solid var(--border);padding:8px 20px;display:flex;gap:8px;align-items:center;flex-shrink:0}
+.tbtn{background:var(--bg-input);color:var(--text-secondary);border:1px solid var(--border-light);padding:5px 14px;border-radius:4px;font-size:12px;cursor:pointer;font-weight:600}
+.tbtn:hover{background:var(--bg-hover)}
+.tbtn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tbtn.primary:hover{background:var(--accent-hover)}
+.tbtn.danger{background:var(--bg-danger);color:var(--danger);border-color:var(--danger)}
+.tbtn.danger:hover{background:var(--bg-over)}
+
+/* ── Capacity matrix table inside left panel ── */
+.capacity-table{margin-top:12px;border-top:1px solid var(--border);padding-top:12px}
+.capacity-table .toggle-btn{font-size:10px;color:var(--text-muted);cursor:pointer;background:none;border:none;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.capacity-table .toggle-btn:hover{color:var(--text-secondary)}
+.capacity-table table{width:100%;border-collapse:collapse;font-size:11px}
+.capacity-table th,.capacity-table td{border:1px solid var(--border);padding:4px;text-align:center;white-space:nowrap}
+.capacity-table th{background:var(--bg-panel);color:var(--text-muted);font-size:10px;text-transform:uppercase}
+.capacity-table td{background:var(--bg-surface)}
+.capacity-table input[type=number]{width:42px;padding:2px 4px;text-align:center;font-size:11px}
+.capacity-table .pers-total{font-weight:600;color:var(--text-primary)}
+.capacity-table .rm-btn{background:transparent;border:0;color:var(--text-muted);cursor:pointer;font-size:10px;padding:2px}
+.capacity-table .rm-btn:hover{color:var(--danger)}
+
+/* ── Add epic form (right panel) ── */
+.add-epic-form{margin-top:14px;border-top:1px solid var(--border);padding-top:12px;display:flex;flex-direction:column;gap:6px}
+.add-epic-form input{width:100%}
+.add-epic-form button{width:100%}
+
+/* ── Misc ── */
+.empty-state{color:var(--text-empty);font-size:12px;text-align:center;padding:20px 0}
+.epic-list-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.epic-list-header h2{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:0}
+.epic-list-header .actions{display:flex;gap:6px}
+
+/* ── Theme toggle button ── */
+.theme-toggle{background:var(--bg-input);border:1px solid var(--border-light);color:var(--text-secondary);padding:5px 12px;border-radius:20px;font-size:12px;cursor:pointer;font-weight:600;line-height:1;white-space:nowrap}
+.theme-toggle:hover{background:var(--bg-hover)}
